@@ -1,0 +1,24 @@
+/* Tipografia base do sistema para leitura limpa e sem dependências externas */
+body {
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+}
+
+/* Deslocamento suave da página até aos identificadores de secção */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desativa o scroll suave se o utilizador tiver configurado redução de movimento no sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Realce visual de campos inválidos apenas depois de o utilizador interagir com eles */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: #9B1C1C;
+  outline-color: #9B1C1C;
+}
