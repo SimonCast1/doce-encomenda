@@ -28,6 +28,8 @@ require_once __DIR__ . '/produtos.php';
       };
     </script>
 
+    <!-- Ícone do separador do browser -->
+    <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
     <!-- Regras complementares que o Tailwind não cobre -->
     <link rel="stylesheet" href="css/estilo.css">
   </head>
