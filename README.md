@@ -36,6 +36,7 @@ includes/
 css/estilo.css     estilos extra, além do Tailwind
 js/menu.js         abrir e fechar o menu em mobile
 imagens/           fotografias dos produtos, equipa e galeria
+docs/              mockups da Entrega 1 e esquemas (draw.io)
 ```
 
 ## Tecnologias
