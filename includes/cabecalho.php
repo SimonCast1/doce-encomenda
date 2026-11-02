@@ -66,7 +66,7 @@ require_once __DIR__ . '/produtos.php';
 
             foreach ($itens_menu as $chave => $item) {
               $ativo = ($pagina_ativa === $chave);
-              $classes_link = 'flex items-center min-h-11 px-3 py-2 text-base font-medium rounded-md transition motion-reduce:transition-none hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2';
+              $classes_link = 'flex items-center whitespace-nowrap min-h-11 px-3 py-2 text-base font-medium rounded-md transition motion-reduce:transition-none hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2';
               if ($ativo) {
                 $classes_link .= ' text-framboesa border-b-2 border-framboesa font-semibold';
               } else {
