@@ -8,7 +8,7 @@ Os dados da loja (morada, telefone, nomes da equipa) são fictícios.
 
 Entrega 2: estrutura e formatação em HTML e CSS, em PHP com cabeçalho e rodapé partilhados.
 
-- O formulário de encomendas ainda não envia nada. O campo Tamanho só vai ser preenchido quando houver JavaScript (Alpine.js), na fase seguinte.
+- O formulário de encomendas valida no servidor (PHP): 48 horas de antecedência, horário da loja, telefone e quantidade. Mostra um resumo, mas ainda não guarda a encomenda.
 - Sem base de dados por agora. Os produtos estão num array em `includes/produtos.php`.
 
 ## Como correr
@@ -27,7 +27,7 @@ No XAMPP em Windows: `C:\xampp\php\php.exe -S localhost:8000`. Depois abrir http
 index.php          página inicial (destaques e horário)
 produtos.php       catálogo com pesquisa (?q=) e filtro por categoria (?categoria=)
 sobre.php          história, equipa e galeria
-encomendas.php     formulário de encomenda (validação HTML5)
+encomendas.php     formulário de encomenda (validação em PHP e resumo)
 contactos.php      morada, telefone, email, horário e mapa
 includes/
   cabecalho.php    <head>, cabeçalho e menu (usa $titulo_pagina e $pagina_ativa)
