@@ -1,0 +1,5 @@
+# Só a versão HTML vai para o GitHub
+*.php
+includes/
+entrega-e2-html/
+entrega-e2-html.zip

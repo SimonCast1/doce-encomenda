@@ -4,36 +4,21 @@ Site de uma pastelaria de bairro em Lisboa (bolos por encomenda e doçaria tradi
 
 Os dados da loja (morada, telefone, nomes da equipa) são fictícios.
 
-## Estado
+## Como ver o site
 
-Entrega 2: estrutura e formatação em HTML e CSS, em PHP com cabeçalho e rodapé partilhados.
-
-- O formulário de encomendas valida no servidor (PHP): 48 horas de antecedência, horário da loja, telefone e quantidade. Mostra um resumo, mas ainda não guarda a encomenda.
-- Sem base de dados por agora. Os produtos estão num array em `includes/produtos.php`.
-
-## Como correr
-
-É preciso PHP 8 (por exemplo, o do XAMPP). Na pasta do projeto:
-
-```
-php -S localhost:8000
-```
-
-No XAMPP em Windows: `C:\xampp\php\php.exe -S localhost:8000`. Depois abrir http://localhost:8000.
+Abrir `index.html` no browser (duplo clique). Não precisa de servidor. É preciso ligação à internet para o Tailwind CSS (CDN) e o mapa.
 
 ## Estrutura
 
 ```
-index.php          página inicial (destaques e horário)
-produtos.php       catálogo com pesquisa (?q=) e filtro por categoria (?categoria=)
-sobre.php          história, equipa e galeria
-encomendas.php     formulário de encomenda (validação em PHP e resumo)
-contactos.php      morada, telefone, email, horário e mapa
-includes/
-  cabecalho.php    <head>, cabeçalho e menu (usa $titulo_pagina e $pagina_ativa)
-  rodape.php       rodapé e fecho do documento
-  produtos.php     lista de produtos e funções de preço e imagem
+index.html         página inicial (destaques e horário)
+sobre.html         história, equipa e galeria
+produtos.html      catálogo com pesquisa e filtro por categoria
+encomendas.html    formulário de encomenda (validação em JavaScript e resumo)
+contactos.html     morada, telefone, email, horário e mapa
 css/estilo.css     estilos extra, além do Tailwind
+js/dados.js        catálogo de produtos
+js/paginas.js      destaques, filtro de produtos e formulário
 js/menu.js         abrir e fechar o menu em mobile
 imagens/           fotografias dos produtos, equipa e galeria
 docs/              mockups da Entrega 1 e esquemas (draw.io)
@@ -41,10 +26,8 @@ docs/              mockups da Entrega 1 e esquemas (draw.io)
 
 ## Tecnologias
 
-- PHP, com includes partilhados
-- Tailwind CSS (via CDN), com as cores da marca definidas em `includes/cabecalho.php`
-- HTML semântico e responsivo (testado a 360 e 1280 px)
+HTML5, Tailwind CSS (via CDN), JavaScript. Site responsivo (mobile e desktop).
 
 ## Imagens
 
-As fotografias foram geradas com IA (Google AI Studio) e comprimidas para JPG de largura máxima 800 px (1000 px no hero). Quando uma imagem não existe, o site mostra `imagens/placeholder.svg`.
+As fotografias foram geradas com IA (Google AI Studio) e comprimidas para JPG.

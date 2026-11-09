@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Doce Encomenda: pastelaria tradicional e bolos por encomenda em Lisboa.">
+    <title>Encomendas | Doce Encomenda</title>
+
+    <!-- Tailwind CSS por CDN com paleta do projeto -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              creme: '#FFF7EF',
+              bege: '#F3E4D3',
+              castanho: '#3E2723',
+              framboesa: '#B5485D',
+              erro: '#9B1C1C'
+            }
+          }
+        }
+      };
+    </script>
+
+    <!-- Ícone do separador do browser -->
+    <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+    <!-- Regras complementares que o Tailwind não cobre -->
+    <link rel="stylesheet" href="css/estilo.css">
+  </head>
+  <body class="bg-creme text-castanho min-h-screen flex flex-col antialiased">
+    <!-- Ligação acessível para saltar navegação -->
+    <a href="#conteudo-principal" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:p-3 focus:bg-framboesa focus:text-creme focus:rounded-md focus:outline-none">
+      Saltar para o conteúdo
+    </a>
+
+    <header class="bg-creme border-b border-castanho/15 sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <a href="index.html" class="flex items-center min-h-11 text-xl font-bold tracking-tight text-castanho hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2 transition motion-reduce:transition-none">
+          Doce Encomenda
+        </a>
+
+        <!-- Botão hambúrguer para ecrãs pequenos -->
+        <button type="button" id="botao-menu" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu de navegação" class="md:hidden flex items-center justify-center w-11 h-11 rounded-lg border border-castanho/20 text-castanho hover:bg-bege focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2 transition motion-reduce:transition-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <!-- Navegação principal -->
+        <nav id="menu-principal" aria-label="Menu principal" class="hidden md:flex absolute md:static top-full left-0 right-0 bg-creme md:bg-transparent border-b md:border-b-0 border-castanho/15 md:p-0 px-4 py-4 shadow-md md:shadow-none">
+          <ul class="flex flex-col md:flex-row md:items-center gap-1 md:gap-6 w-full md:w-auto">
+            <li><a href="index.html" class="flex items-center whitespace-nowrap min-h-11 px-3 py-2 text-base font-medium rounded-md transition motion-reduce:transition-none hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2 text-castanho">Início</a></li>
+            <li><a href="sobre.html" class="flex items-center whitespace-nowrap min-h-11 px-3 py-2 text-base font-medium rounded-md transition motion-reduce:transition-none hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2 text-castanho">Sobre nós</a></li>
+            <li><a href="produtos.html" class="flex items-center whitespace-nowrap min-h-11 px-3 py-2 text-base font-medium rounded-md transition motion-reduce:transition-none hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2 text-castanho">Produtos</a></li>
+            <li><a href="encomendas.html" class="flex items-center whitespace-nowrap min-h-11 px-3 py-2 text-base font-medium rounded-md transition motion-reduce:transition-none hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2 text-framboesa border-b-2 border-framboesa font-semibold" aria-current="page">Encomendas</a></li>
+            <li><a href="contactos.html" class="flex items-center whitespace-nowrap min-h-11 px-3 py-2 text-base font-medium rounded-md transition motion-reduce:transition-none hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2 text-castanho">Contactos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo-principal" class="flex-grow">
+
+<div class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+  <header class="mb-8">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-castanho">
+      Fazer uma encomenda
+    </h1>
+    <p class="text-base md:text-lg text-castanho/80 mt-2">
+      Levantamento na pastelaria. Encomendas com pelo menos 48 horas de antecedência.
+    </p>
+  </header>
+
+  <section id="resumo" class="hidden bg-bege p-6 md:p-8 rounded-2xl border border-castanho/10 space-y-4" aria-labelledby="titulo-resumo">
+    <h2 id="titulo-resumo" class="text-2xl font-bold text-castanho">Resumo da encomenda</h2>
+    <p class="text-castanho/80">Confirma os dados. Ainda não guardámos nada: esta fase só mostra o resumo.</p>
+    <dl id="resumo-dados" class="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-x-6 gap-y-2 text-castanho"></dl>
+    <button type="button" id="nova-encomenda" class="inline-flex items-center min-h-11 px-6 py-2 bg-framboesa text-creme font-semibold rounded-xl hover:bg-framboesa/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2">Fazer outra encomenda</button>
+  </section>
+
+  <div id="aviso-erros" class="hidden mb-6 p-4 rounded-xl border border-erro bg-creme text-erro" role="alert">
+    <p class="font-bold">Há campos por corrigir. Vê as mensagens abaixo.</p>
+  </div>
+
+  <form id="form-encomenda" novalidate class="bg-bege p-6 md:p-8 rounded-2xl border border-castanho/10 space-y-8">
+    <fieldset class="space-y-4">
+      <legend class="text-xl font-bold text-castanho pb-2 border-b border-castanho/15 w-full">O teu pedido</legend>
+      <div class="space-y-1">
+        <label for="campo-produto" class="block text-sm font-semibold text-castanho">Produto e tamanho <span class="text-xs font-normal text-castanho/70">(obrigatório)</span></label>
+        <select name="produto" id="campo-produto" required class="w-full min-h-11 px-4 bg-creme text-castanho border border-castanho/20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2"></select>
+        <p id="erro-produto" class="text-sm font-semibold text-erro hidden" role="alert"></p>
+      </div>
+      <div class="space-y-1">
+        <label for="campo-quantidade" class="block text-sm font-semibold text-castanho">Quantidade <span class="text-xs font-normal text-castanho/70">(obrigatório)</span></label>
+        <input type="number" name="quantidade" id="campo-quantidade" min="1" max="20" value="1" required class="w-full min-h-11 px-4 bg-creme text-castanho border border-castanho/20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2">
+        <p id="erro-quantidade" class="text-sm font-semibold text-erro hidden" role="alert"></p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label for="campo-data" class="block text-sm font-semibold text-castanho">Data de levantamento <span class="text-xs font-normal text-castanho/70">(obrigatório)</span></label>
+          <input type="date" name="data" id="campo-data" required class="w-full min-h-11 px-4 bg-creme text-castanho border border-castanho/20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2">
+        </div>
+        <div class="space-y-1">
+          <label for="campo-hora" class="block text-sm font-semibold text-castanho">Hora <span class="text-xs font-normal text-castanho/70">(obrigatório)</span></label>
+          <input type="time" name="hora" id="campo-hora" min="08:00" max="18:30" step="1800" required class="w-full min-h-11 px-4 bg-creme text-castanho border border-castanho/20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2">
+        </div>
+      </div>
+      <p id="erro-data" class="text-sm font-semibold text-erro hidden" role="alert"></p>
+    </fieldset>
+
+    <fieldset class="space-y-4">
+      <legend class="text-xl font-bold text-castanho pb-2 border-b border-castanho/15 w-full">Os teus dados</legend>
+      <div class="space-y-1">
+        <label for="campo-nome" class="block text-sm font-semibold text-castanho">Nome <span class="text-xs font-normal text-castanho/70">(obrigatório)</span></label>
+        <input type="text" name="nome" id="campo-nome" required minlength="3" autocomplete="name" class="w-full min-h-11 px-4 bg-creme text-castanho border border-castanho/20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2">
+        <p id="erro-nome" class="text-sm font-semibold text-erro hidden" role="alert"></p>
+      </div>
+      <div class="space-y-1">
+        <label for="campo-telefone" class="block text-sm font-semibold text-castanho">Telefone <span class="text-xs font-normal text-castanho/70">(obrigatório)</span></label>
+        <input type="tel" name="telefone" id="campo-telefone" required autocomplete="tel" class="w-full min-h-11 px-4 bg-creme text-castanho border border-castanho/20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2">
+        <p id="erro-telefone" class="text-sm font-semibold text-erro hidden" role="alert"></p>
+      </div>
+      <div class="space-y-1">
+        <label for="campo-email" class="block text-sm font-semibold text-castanho">Email <span class="text-xs font-normal text-castanho/70">(opcional)</span></label>
+        <input type="email" name="email" id="campo-email" autocomplete="email" class="w-full min-h-11 px-4 bg-creme text-castanho border border-castanho/20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2">
+        <p id="erro-email" class="text-sm font-semibold text-erro hidden" role="alert"></p>
+      </div>
+      <div class="space-y-1">
+        <label for="campo-observacoes" class="block text-sm font-semibold text-castanho">Observações <span class="text-xs font-normal text-castanho/70">(opcional)</span></label>
+        <textarea name="observacoes" id="campo-observacoes" maxlength="200" rows="4" class="w-full p-4 bg-creme text-castanho border border-castanho/20 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2"></textarea>
+        <p id="erro-observacoes" class="text-sm font-semibold text-erro hidden" role="alert"></p>
+      </div>
+    </fieldset>
+
+    <div class="pt-2">
+      <button type="submit" class="w-full md:w-auto min-h-11 px-8 py-3 bg-framboesa text-creme font-semibold rounded-xl hover:bg-framboesa/90 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa focus-visible:ring-offset-2 transition motion-reduce:transition-none">
+        Enviar pedido
+      </button>
+    </div>
+  </form>
+</div>
+</main>
+
+    <footer class="bg-bege border-t border-castanho/15 mt-16 py-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-sm space-y-3">
+        <address class="not-italic space-y-1">
+          <p><span class="font-semibold">Morada:</span> Rua dos Doces, 12, Lisboa</p>
+          <p><span class="font-semibold">Telefone:</span> <a href="tel:+351210000000" class="inline-flex items-center min-h-11 hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa rounded">+351 210 000 000</a></p>
+          <p><span class="font-semibold">Email:</span> <a href="mailto:geral@doceencomenda.pt" class="inline-flex items-center min-h-11 hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa rounded">geral@doceencomenda.pt</a></p>
+          <p><span class="font-semibold">Horário:</span> Seg-Sáb 08h-19h, Dom 08h-13h</p>
+          <p><span class="font-semibold">Redes sociais:</span> <a href="#" class="inline-flex items-center min-h-11 hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa rounded">Instagram</a> | <a href="#" class="inline-flex items-center min-h-11 hover:text-framboesa focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-framboesa rounded">Facebook</a></p>
+        </address>
+        <p class="text-xs text-castanho/70 pt-2 border-t border-castanho/10">
+          &copy; <span id="ano">2026</span> Doce Encomenda. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script único para o comportamento do menu móvel -->
+    <script src="js/menu.js"></script>
+    <script src="js/dados.js"></script>
+    <script src="js/paginas.js"></script>
+  </body>
+</html>
